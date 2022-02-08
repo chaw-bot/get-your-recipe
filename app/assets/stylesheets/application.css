@@ -41,3 +41,9 @@ a:link {
 .food-form {
   padding: 10px;
 }
+
+.recipe-body {
+  display: flex;
+  column-gap: 30px;
+  align-items: baseline;
+}

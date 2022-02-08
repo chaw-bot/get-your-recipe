@@ -1,4 +1,7 @@
 <div class="card">
+  <div class="food-title">
+    <h1>Add to my list...</h1>
+  </div>
   <%= form_with model: @foods, url:foods_path, scope: :food, method: :post, data: { turbo: false }, class: "food-form" do |form| %>
     <div class="input textarea">
       <%= form.label :name %>
