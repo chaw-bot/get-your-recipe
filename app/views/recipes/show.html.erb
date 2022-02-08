@@ -1,2 +1,21 @@
-<h1>Recipes#show</h1>
-<p>Find me in app/views/recipes/show.html.erb</p>
+<section class="public-recipe">
+
+  <h1>HOW PAGE</h1>
+
+  # <% @recipes.each do |recipe| %>
+    <%= link_to recipe_path(@recipe) do%>
+      <div class="recipe-card">
+        <div class="recipe-title">
+           <h2><%= @recipe.name %></h2>
+         </div>
+         <p class="recipe-description"><%=@recipe.description%></p>
+      </div>
+    <% end %>
+  <% end %>
+
+  <div class="post-btn">
+    <button>
+      <%= link_to "back", recipes_path %>
+    </button>
+  </div>
+</section>
