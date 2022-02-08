@@ -1,0 +1,12 @@
+<nav class="navbar navbar-light bg-light">
+  <%= link_to "Get Your Recipe", root_path%>
+  <%# <% if user_signed_in? %>
+    <%= link_to "My Food", foods_path, class: "justify-content-center align-self-center" %>
+    <%= link_to "My Recipes", recipes_path, class: "justify-content-center align-self-center" %>
+    <%= link_to "Our Recipes", public_recipes_path, class: "justify-content-center align-self-center" %>
+    <%= button_to "Sign Out", method: :delete, data: {turbo: false}, class: "justify-content-center align-self-center btn btn-primary" %>
+  <%# <% else %>
+    <%= link_to "Sign In", class: "justify-content-center align-self-center" %>
+    <%= link_to "Sign Up", class: "justify-content-center align-self-center" %>
+  <%# <% end %>
+</nav>
