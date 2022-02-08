@@ -1,0 +1,78 @@
+
+:root {
+  --size-border: 2px solid #272727;
+  --prmary-color: #f4f4f4;
+
+  /* --text-color: #272727; */
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  padding: 0 5%;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+.d-flex {
+  display: flex;
+}
+
+a:link {
+  /* text-decoration: none; */
+}
+
+/* section {
+  max-width: 640px;
+  margin: 0 auto 2rem;
+  padding: 1rem;
+  background-color: #ccc;
+} */
+
+h1 {
+  width: 100%;
+  text-align: center;
+  margin: 0.3rem 0 0.6rem;
+}
+
+.public-recipes-section .recipe-public-card,
+section .recipe-card {
+  max-width: 720px;
+  margin: 0 auto 1rem;
+  padding: 1rem;
+  background-color: #ccc;
+}
+
+.recipe-public-card .recipe-public-header {
+  width: 25%;
+  margin-right: 1rem;
+}
+
+.recipe-public .recipe-public-counter p {
+  /* color: var(--text-color); */
+}
+
+.recipe-btn {
+  width: 100%;
+  justify-content: center;
+}
+
+.add-recipe-btn button {
+  font-weight: 700;
+  border: var(--size-border);
+  border-radius: 4px;
+  padding: 0.4rem 1rem;
+}
+
+/* form {
+  max-width: 640px;
+  margin: 1.5rem auto;
+  padding: 1rem;
+  background-color: #ccc;
+  border-radius: 4px;
+} */
