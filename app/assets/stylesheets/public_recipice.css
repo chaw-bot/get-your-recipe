@@ -2,6 +2,7 @@
 :root {
   --size-border: 2px solid #272727;
   --prmary-color: #f4f4f4;
+
   /* --text-color: #272727; */
 }
 
@@ -51,8 +52,8 @@ section .recipe-card {
   width: 25%;
   margin-right: 1rem;
 }
-.recipe-public .recipe-public-counter p {
 
+.recipe-public .recipe-public-counter p {
   /* color: var(--text-color); */
 }
 
