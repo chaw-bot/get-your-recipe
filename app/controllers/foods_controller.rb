@@ -5,7 +5,9 @@ class FoodsController < ApplicationController
 
   def new; end
 
-  def create; end
+  def create
+    redirect_to '/foods', notice: 'Success!'
+  end
 
   def destroy; end
 end
