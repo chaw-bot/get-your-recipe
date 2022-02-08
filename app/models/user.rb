@@ -5,4 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :confirmable
   has_many :foods, foreign_key: 'user_id'
   has_many :recipes, foreign_key: 'user_id'
+
+  def admin?
+    role == 'admin'
+  end
 end
