@@ -57,18 +57,17 @@ section .recipe-card {
   /* color: var(--text-color); */
 }
 
-
-/* .add-recipe-btn {
+.recipe-btn {
   width: 100%;
   justify-content: center;
-} */
+}
 
-/* .add-recipe-btn button {
+.add-recipe-btn button {
   font-weight: 700;
   border: var(--size-border);
   border-radius: 4px;
   padding: 0.4rem 1rem;
-} */
+}
 
 /* form {
   max-width: 640px;
