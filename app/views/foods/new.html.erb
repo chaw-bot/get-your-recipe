@@ -1,2 +1,22 @@
-<h1>Foods#new</h1>
-<p>Find me in app/views/foods/new.html.erb</p>
+<div class="card">
+  <div class="food-title">
+    <h1>Add to my list...</h1>
+  </div>
+  <%= form_with model: @foods, url:foods_path, scope: :food, method: :post, data: { turbo: false }, class: "food-form" do |form| %>
+    <div class="input textarea">
+      <%= form.label :name %>
+      <%= form.text_field :text, class: "form-control" %>
+    </div>
+    <div class="input textarea mt-3">
+      <%= form.label :measurement_unit %>
+      <%= form.text_field :text, class: "form-control" %>
+    </div>
+    <div class="input textarea mt-3">
+      <%= form.label :price %>
+      <%= form.text_field :text, class: "form-control" %>
+    </div>
+    <div class="submit mt-3">
+      <%= form.submit "submit" %>
+    </div>
+  <% end %>
+</div>
