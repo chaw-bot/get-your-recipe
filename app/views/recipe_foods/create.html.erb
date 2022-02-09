@@ -1,2 +1,28 @@
 <h1>RecipeFoods#create</h1>
 <p>Find me in app/views/recipe_foods/create.html.erb</p>
+
+
+
+# <table class="table table-striped table-bordered border-dark">
+# <thead>
+#   <tr>
+#     <th scope="col">Food</th>
+#     <th scope="col">Quantity</th>
+#     <th scope="col">Value</th>
+#     <th scope="col">Actions</th>
+#   </tr>
+# </thead>
+# <tbody>
+#   <% @foods.each do |food| %>
+#     <tr>
+#       <td><%= food.name%></td>
+#       <td><%= food.measurement_unit%> g</td>
+#       <td>$ <%= food.price%></td>
+#       <th scope="col">
+#         <%= link_to 'Modify', food_path(food.id), method: :update %>
+#         <%= link_to 'Remove', food_path(food.id), method: :delete %>
+#       </th>
+#     </tr>
+#   <% end %>
+# </tbody>
+# </table>
