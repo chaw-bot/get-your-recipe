@@ -1,20 +1,36 @@
 <div class="food-title">
   <h1>My list of Recipes</h1>
 </div>
+
+
+
+<% @recipes.each do |recipe| %>
+  <%= link_to recipe_path(recipe) do%>
+    <div class="recipe-card d-flex">
+      <div class="recipe-title">
+         <h2><%= recipe.name %></h2>
+         <%= link_to 'Delete', method: :delete %>
+      </div>
+      <p class="recipe-description"><%=recipe.description%></p>
+    </div>
+  <% end %>
+<% end %>
+
+
 <div class="card mt-3">
-  <div class="card-body recipe-body">
-    <div>
-      <h1>Recipe1</h1>
-      <%= link_to 'Delete', method: :delete %>
-    </div>
-    <div>
-       <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Fusce risus mi, luctus id ligula nec, malesuada rhoncus tortor.
-          Ut egestas mollis erat.
-       </p>
-    </div>
-  </div>
+#   <div class="card-body recipe-body">
+#     <div>
+#       <h1>Recipe1</h1>
+#       <% link_to 'Delete', method: :delete %>
+#     </div>
+#     <div>
+#        <p>
+#           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+#           Fusce risus mi, luctus id ligula nec, malesuada rhoncus tortor.
+#           Ut egestas mollis erat.
+#        </p>
+#     </div>
+#   </div>
 </div>
 
 <div class="post-btn">
