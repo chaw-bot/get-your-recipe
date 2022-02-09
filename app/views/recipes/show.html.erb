@@ -1,17 +1,10 @@
 <section class="public-recipe">
-
-  <h1>HOW PAGE</h1>
-
-
-      <div class="recipe-card">
-        <div class="recipe-title">
-           <h2><%= @recipe.name %></h2>
-         </div>
-         <p><%=@recipe.preparation_time%></p>
-         <p><%=@recipe.cooking_time%></p>
-         <p>Step go here ...</p>
-      </div>
-
+  <h1 class="recipe-title"><%= @recipe.name%> Recipe</h1>
+  <div class="recipe-card">
+    <h5>Preparation time: <%=@recipe.preparation_time%> hour</h5>
+    <h5>Cooking time: <%=@recipe.cooking_time%> hour</h5>
+    <h5>Step go here ...</h5>
+  </div>
   <div class="recipe-btn">
     <button>
       <%= link_to "back", recipes_path %>

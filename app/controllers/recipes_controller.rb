@@ -5,7 +5,6 @@ class RecipesController < ApplicationController
   end
 
   def show
-    # @recipe = @recipes.find(params[:id])
     @user = User.find(params[:id])
     @recipe = @user.recipes.find(params[:id])
   end
