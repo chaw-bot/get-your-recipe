@@ -14,18 +14,39 @@
  *= require_self
  */
 
-* {
-  list-style: none;
+ :root {
+  --size-border: 2px solid #272727;
+  --prmary-color: #f4f4f4;
+  --bacground-color: #eee;
+
+  --text-color: #272727;
 }
 
 body {
-  padding-left: 5%;
-  padding-right: 5%;
-  height: 100vh;
+  padding: 0 3%;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+.d-flex {
+  display: flex;
 }
 
 a:link {
   text-decoration: none;
+}
+
+button {
+  font-weight: 700;
+  border: var(--size-border);
+  border-radius: 4px;
+  padding: 0.3rem 1rem;
 }
 
 .button {
@@ -46,7 +67,7 @@ a:link {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 90%;
+  /* height: 90%; */
   width: 100%;
 }
 
