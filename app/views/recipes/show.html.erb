@@ -1,20 +1,60 @@
-<section class="public-recipe">
+<section class="recipe-detail">
+  <h2><%= @recipe.name %></h2>
 
-  <h1>HOW PAGE</h1>
+  <div class="main-detail d-flex">
+    <div class="recipe">
+      <p>Preparation time: <%=@recipe.preparation_time%> hour</p>
+      <p>Cooking time: <%=@recipe.cooking_time%> hours</p>
+      <p>Step go here ...</p>
+    </div>
+    <div>
+      <% if @recipe.public %>
+        <p>Public: ON</p>
+      <% else %>
+        <p>Public: OFF</p>
+      <% end %>
+    </div>
+  </div>
+  <div class="detail-btns d-flex">
+     <% button_to "Generate shopping list", general_shopping_lists_path, class:"gsl-btn", :method => :get %>
+     <button class="">
+       <%= link_to 'Generate shopping list', new_recipe_path, data: { turbo: false }, html: { method: :put}, class: "add-foods" %>
+     </button>
+    <button class="">Add ingredient</button>
+  </div>
+
+  <div class="line-detail"></div>
 
 
-      <div class="recipe-card">
-        <div class="recipe-title">
-           <h2><%= @recipe.name %></h2>
-         </div>
-         <p><%=@recipe.preparation_time%></p>
-         <p><%=@recipe.cooking_time%></p>
-         <p>Step go here ...</p>
-      </div>
+  <table class="table table-striped table-bordered border-dark">
+    <thead>
+      <tr>
+        <th scope="col">Food</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Value</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @foods.each do |food| %>
+        <tr>
+          <td><%= food.name%></td>
+          <td><%= food.measurement_unit%> g</td>
+          <td>$ <%= food.price%></td>
+          <th scope="col">
+            <%= link_to 'Modify', food_path(food.id), method: :update %>
+            <%= link_to 'Remove', food_path(food.id), method: :delete %>
+          </th>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
 
   <div class="recipe-btn">
     <button>
-      <%= link_to "back", recipes_path %>
+      <%= link_to "back", public_recipes_path %>
+      <% link_to "back", recipes_path %>
     </button>
   </div>
 </section>
