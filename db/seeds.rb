@@ -7,13 +7,9 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 
-# user1 = User.create!(name: 'John Doe', email: 'john@gmail.com', password: 'john123')
-# user2 = User.create!(name: 'Julia Lisa', email: 'julia@gmail.com', password: 'julia123')
-# user3 = User.create!(name: 'Sofi Jun', email: 'sofi@gmail.com', password: 'sofi123')
-
-user1 = User.create!(name: 'John Doe')
-user2 = User.create!(name: 'Julia Lisa')
-user3 = User.create!(name: 'Sofi Jun')
+user1 = User.create!(name: 'John Doe', email: 'john@gmail.com', password: 'john123')
+user2 = User.create!(name: 'Julia Lisa', email: 'julia@gmail.com', password: 'julia123')
+user3 = User.create!(name: 'Sofi Jun', email: 'sofi@gmail.com', password: 'sofi123')
 
 food1 = user1.foods.create!(name: 'Apple', price: 3500, measurement_unit: 'kg')
 food2 = user1.foods.create!(name: 'Pineapple', price: 4300, measurement_unit: 'kg')
