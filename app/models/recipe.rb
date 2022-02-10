@@ -12,6 +12,6 @@ class Recipe < ApplicationRecord
   end
 
   def total_price
-    # total =
+    foods.sum('price')
   end
 end
