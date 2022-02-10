@@ -8,8 +8,8 @@
   <div class="card mt-3">
     <div class="card-body recipe-body">
       <div>
-        <h1><%= link_to recipe.name, recipe_path(recipe.id) %></h1>
-        <%= link_to 'Delete', recipe_path(recipe.id), method: :delete %>
+        <h1><%= link_to recipe.name, recipe_path(recipe) %></h1>
+        <%= button_to 'Delete', recipe_path(recipe.id), method: :delete %>
       </div>
       <div>
         <p><%= recipe.description %></p>
@@ -17,9 +17,4 @@
     </div>
   </div>
 <% end %>
-
-<div class="post-btn">
-<button>
-  <%= link_to "back", recipes_path %>
-</button>
 </div>
