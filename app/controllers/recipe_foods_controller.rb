@@ -1,10 +1,8 @@
 class RecipeFoodsController < ApplicationController
   def create
-    # @user = User.find(params[:user_id])
-    # @food = @user.foods.create(post_params)
-    # @post.save
-    # redirect_to user_posts_path(@user)
-    redirect_to '/foods', notice: 'Success!'
+    @recipe = current_user.recipes.find(params[:recipe_id])
+    @recipe_food = @recipe.recipe_foods.new(recipe_food_params)
+    redirect_to recipe_path(@recipe.id), notice: 'Success!'
   end
 
   def new
@@ -12,7 +10,9 @@ class RecipeFoodsController < ApplicationController
     # @food = @user.foods.new
   end
 
-  # def post_params
-  #   params.require(:post).permit(:name, :quantity, :price)
-  # end
+  private
+
+  def recipe_food_params
+    params.require(:recipe_foods).permit(:quantity, :recipe_id) 
+  end
 end
