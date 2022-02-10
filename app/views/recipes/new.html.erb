@@ -5,23 +5,24 @@
   <%= form_with model: @recipes, url:recipes_path, scope: :recipe, method: :post, data: { turbo: false }, class: "food-form" do |form| %>
     <div class="input textarea">
       <%= form.label :name %>
-      <%= form.text_field :name, class: "form-control" %>
+      <%= form.text_field :name, placeholder: 'Name of the dish',  class: "form-control" %>
     </div>
     <div class="input textarea mt-3">
       <%= form.label :preparation_time %>
-      <%= form.text_field :preparation_time, class: "form-control" %>
+      <%= form.text_field :preparation_time, placeholder: 'How long in hours will it take to prep', class: "form-control" %>
     </div>
     <div class="input textarea mt-3">
       <%= form.label :cooking_time %>
-      <%= form.text_field :price, class: "form-control" %>
+      <%= form.text_field :cooking_time, placeholder: 'How long in hours will it take to cook', class: "form-control" %>
     </div>
     <div class="input textarea mt-3">
       <%= form.label :how_to.. %>
-      <%= form.text_area :description, class: "form-control" %>
+      <%= form.text_area :description, placeholder: 'What are the preparation and cooking steps', class: "form-control" %>
     </div>
-    <div class="field-recipe d-flex">
-      <%= form.check_box :public, class:"checkbox" %> <br />
-      <%= form.label "Public" %> <br /> </div> 
+    <div class="form-check form-switch mt-3">
+      <%= form.check_box :public, class: "form-check-input", type: "checkbox", id: "flexSwitchCheckDefault" %>
+      <%= form.label "Public", class: "form-check-label", for: "flexSwitchCheckDefault" %>
+    </div>
     <div class="submit mt-3">
       <%= form.submit "submit" %>
     </div>
