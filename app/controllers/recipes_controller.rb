@@ -6,16 +6,15 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
-    @foods = Food.all
-    # @recipe = @recipes.find(params[:id])
-    # @user = User.find(params[:id])
-    # @recipe = @user.recipes.find(params[:id])
+    # @foods = Food.all
+    @foods = current_user.foods
+    # @foods_sum = @foods.sum('price')
   end
 
   def new; end
 
   def create
-    redirect_to '/foods', notice: 'Success!'
+    # redirect_to '/foods', notice: 'Success!'
   end
 
   def destroy; end

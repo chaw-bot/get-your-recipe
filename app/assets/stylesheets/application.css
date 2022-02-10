@@ -24,6 +24,7 @@
 
 body {
   padding: 0 3%;
+  background-color: var(--bacground-color);
 }
 
 * {
@@ -63,13 +64,25 @@ button {
   color: white;
 }
 
-.container {
+section.container {
+  max-width: 992px;
+  margin: 0 auto 2rem;
+  padding: 1rem;
+  background-color: var(--bacground-color);
+}
+
+.navbar {
+  max-width: 992px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* height: 90%; */
   width: 100%;
-}
+} */
 
 .card {
   width: 100%;
