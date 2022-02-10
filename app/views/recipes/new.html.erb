@@ -19,6 +19,9 @@
       <%= form.label :how_to.. %>
       <%= form.text_area :description, class: "form-control" %>
     </div>
+    <div class="field-recipe d-flex">
+      <%= form.check_box :public, class:"checkbox" %> <br />
+      <%= form.label "Public" %> <br /> </div> 
     <div class="submit mt-3">
       <%= form.submit "submit" %>
     </div>

@@ -1,10 +1,11 @@
-user1 = User.create!(name: 'John Doe', email: 'john@gmail.com', password: 'john123')
+user1 = User.create!(name: 'John Doe', email: 'john@gmail.com', password: 'john123', confirmed_at: Time.now)
 user2 = User.create!(name: 'Julia Lisa', email: 'julia@gmail.com', password: 'julia123')
 user3 = User.create!(name: 'Sofi Jun', email: 'sofi@gmail.com', password: 'sofi123')
 
-food1 = user1.foods.create!(name: 'Apple', price: 3500, measurement_unit: 'kg')
-food2 = user1.foods.create!(name: 'Pineapple', price: 4300, measurement_unit: 'kg')
-food3 = user1.foods.create!(name: 'Chicken breasts', price: 6800, measurement_unit: 'units')
+food1 = user1.foods.create!(name: 'Apple', price: 350, measurement_unit: 'kg')
+food2 = user1.foods.create!(name: 'Pineapple', price: 430, measurement_unit: 'kg')
+food3 = user1.foods.create!(name: 'Chicken breasts', price: 680, measurement_unit: 'units')
+food4 = user2.foods.create!(name: 'Fisch', price: 782, measurement_unit: 'units')
 
 descripts1 = 'A hamburger or by apheresis burger, is a sandwich of German origin, consisting of two round-shaped buns generally
   garnished with ground beef and raw vegetables, lettuce, tomato, onion, pickle, and sauce...'

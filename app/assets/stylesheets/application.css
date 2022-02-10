@@ -1,15 +1,37 @@
-* {
-  list-style: none;
+:root {
+  --size-border: 2px solid #272727;
+  --prmary-color: #f4f4f4;
+  --bacground-color: #eee;
+  --text-color: #272727;
 }
 
 body {
-  padding-left: 5%;
-  padding-right: 5%;
+  padding: 0 3%;
   height: 90vh;
+  background-color: var(--bacground-color);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+.d-flex {
+  display: flex;
 }
 
 a:link {
   text-decoration: none;
+}
+
+button {
+  font-weight: 700;
+  border: var(--size-border);
+  border-radius: 4px;
+  padding: 0.3rem 1rem;
 }
 
 .button {
@@ -26,13 +48,25 @@ a:link {
   color: white;
 }
 
-.container {
+section.container {
+  max-width: 992px;
+  margin: 0 auto 2rem;
+  padding: 1rem;
+  background-color: var(--bacground-color);
+}
+
+.navbar {
+  max-width: 992px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 90%;
   width: 100%;
-}
+} */
 
 .card {
   width: 100%;
