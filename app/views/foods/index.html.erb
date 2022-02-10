@@ -22,7 +22,7 @@
           <td><%= food.name%></td>
           <td><%= food.measurement_unit%> g</td>
           <td>$ <%= food.price%></td>
-          <th scope="col"><%= link_to 'Delete', food_path(food.id), method: :delete %></th>
+          <td><%=button_to 'Delete', {:controller => :foods, :action => 'destroy', :id => food.id}, :method => :delete%></td>
         </tr>
       <% end %>
     </tbody>

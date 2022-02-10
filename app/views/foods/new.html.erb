@@ -5,15 +5,15 @@
   <%= form_with model: @foods, url:foods_path, scope: :food, method: :post, data: { turbo: false }, class: "food-form" do |form| %>
     <div class="input textarea">
       <%= form.label :name %>
-      <%= form.text_field :text, class: "form-control" %>
+      <%= form.text_field :name, placeholder:'Food name', class: "form-control" %>
     </div>
     <div class="input textarea mt-3">
       <%= form.label :measurement_unit %>
-      <%= form.text_field :text, class: "form-control" %>
+      <%= form.text_field :measurement_unit, placeholder:'Measurements in grams', class: "form-control" %>
     </div>
     <div class="input textarea mt-3">
       <%= form.label :price %>
-      <%= form.text_field :text, class: "form-control" %>
+      <%= form.text_field :price, placeholder:'Price in dollars', class: "form-control" %>
     </div>
     <div class="submit mt-3">
       <%= form.submit "submit" %>
