@@ -1,17 +1,40 @@
 class RecipesController < ApplicationController
   before_action :authenticate_user!
   def index
-    @recipes = Recipe.all
+    @recipes = current_user.recipes
   end
 
   def show
-    @user = User.find(params[:id])
-    @recipe = @user.recipes.find(params[:id])
+    @recipes = set_recipe
+    @foods = current_user.foods
   end
 
   def new; end
 
-  def create; end
+  def create
+    add_recipe = current_user.recipes.new(recipe_params)
+    if add_recipe.save
+      redirect_to '/recipes', notice: 'Recipe was successfully added.'
+    else
+      render :new, alert: 'Failed to add recipe'
+    end
+  end
 
-  def destroy; end
+  def destroy
+    @recipe = set_recipe
+    @recipe.delete
+    respond_to do |format|
+      format.html { redirect_to recipes_url, notice: 'Recipes was deleted successfully.' }
+    end
+  end
+
+  private
+
+  def set_recipe
+    @recipe = Recipe.find(params[:id])
+  end
+
+  def recipe_params
+    params.require(:recipe).permit(:name, :preparation_time, :cooking_time, :description, :public)
+  end
 end
