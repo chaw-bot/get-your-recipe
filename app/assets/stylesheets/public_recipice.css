@@ -25,7 +25,6 @@ h1 {
   width: 70%;
 }
 
-
 .recipe-public-card .recipe-public-header {
   width: 35%;
   margin-right: 1rem;
@@ -63,6 +62,10 @@ h1 {
   text-align: center;
 }
 
+.detail-btns {
+  justify-content: space-between;
+}
+
 .recipe-details .main-detail,
 .recipe-details .detail-btns {
   width: 90%;
@@ -74,11 +77,6 @@ h1 {
   justify-content: space-around;
   margin: 3rem auto;
 }
-
-.detail-btns {
-  justify-content: space-between;
-}
-
 
 .recipe-detail {
   background-color: var(--bacground-color);
