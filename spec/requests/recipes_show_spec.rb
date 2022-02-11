@@ -35,14 +35,5 @@ RSpec.describe 'Recipe Show Page', type: :feature do
       expect(page).to have_current_path general_shopping_lists_path(@recipe1)
     end
 
-    it 'When I click to Generate shopping list button redirect to Shopping List page' do
-      click_button 'Generate shopping list'
-      expect(page).to have_current_path general_shopping_lists_path
-      # expect(page).to have_content 'Amount of food items to buy: 1'
-      # expect(page).to have_current_path(general_shopping_lists_path(@recipe1))
-      # expect(page).to have_link 'Generate shopping list'
-      # expect(page).to have_link 'Add ingredients'
-      # expect(page).to_not have_link 'Remove'
-    end
   end
 end

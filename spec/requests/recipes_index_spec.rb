@@ -37,19 +37,16 @@ RSpec.describe 'Recipe Index Page', type: :feature do
     it 'When I click to Delete  button' do
       click_button 'Delete'
       expect(page).to have_current_path recipes_path
-      # expect(page).to have_current_path(new_recipe_path)
     end
 
     it 'When I click to Add a new recipe  button' do
       click_button 'Add a new recipe'
       expect(page).to have_current_path new_recipe_path
-      # expect(page).to have_current_path(new_recipe_path)
     end
 
     it 'When I click Delete button, it redirects me to the user\'s post\'s index page.' do
       click_button 'Delete'
       expect(page).to have_current_path recipes_path
-      # expect(page).to have_current_path(recipes_path(@recipe1))
     end
 
     it 'when I click on a recipe, it redirects me to that recipe\'s show page.' do
