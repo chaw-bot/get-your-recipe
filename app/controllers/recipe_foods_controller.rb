@@ -3,25 +3,30 @@ class RecipeFoodsController < ApplicationController
 
   def create
     @recipe = Recipe.find(params[:recipe_id])
-    # @recipe = Recipe.where(id: :id)
-    @food = Food.new(food_params)
-    @food.user = current_user
-    @food.save!
-    @recipe_food = @recipe.recipe_foods.new(food: @food, quantity: params[:food][:quantity])
-    @recipe_food.save!
-    # redirect_to general_shopping_lists_path
-    redirect_to recipe_path(@recipe), notice: 'Ingredient saved successfully'
+    @recipe_food = @recipe.recipe_foods.new(recipe_food_params)
+    if @recipe_food.save
+      redirect_to recipe_path(@recipe.id), notice: 'Ingredient was successfully added.'
+    else
+      render :new, alert: 'Failed to add Recipefood'
+    end
   end
 
   def new
-    @recipe = Recipe.find(params[:recipe_id])
-    # @user = User.find(params[:user_id])
-    # @food = @user.foods.new
+    @foods = current_user.foods
+  end
+
+  def destroy
+    @recipe_food = RecipeFood.find(params[:id])
+    if @recipe_food.destroy
+      redirect_to recipe_path(params[:recipe_id]), notice: 'Successfully deleted!'
+    else
+      redirect_to recipe_path(params[:recipe_id]), alert: 'Error occured!'
+    end
   end
 
   private
 
-  def food_params
-    params.require(:food).permit(:name, :measurement_unit, :price)
+  def recipe_food_params
+    params.require(:recipe_foods).permit(:quantity, :food_id)
   end
 end

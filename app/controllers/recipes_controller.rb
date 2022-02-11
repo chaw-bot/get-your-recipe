@@ -5,12 +5,9 @@ class RecipesController < ApplicationController
   end
 
   def show
-    @recipe = set_recipe
-    # @foods = current_user.foods
-    @foods = @recipe.foods
-    # # @recipe = Recipe.find(params[:id])
-    # # @foods = @recipe.recipe_foods.includes(:food) 
-    # @foods = current_user.recipes.includes(:foods)
+    @recipes = set_recipe
+    @foods = current_user.foods
+    @recipe_foods = @recipes.recipe_foods
   end
 
   def new; end
@@ -26,7 +23,7 @@ class RecipesController < ApplicationController
 
   def destroy
     @recipe = set_recipe
-    @recipe.delete
+    @recipe.destroy
     respond_to do |format|
       format.html { redirect_to recipes_url, notice: 'Recipes was deleted successfully.' }
     end
@@ -35,7 +32,8 @@ class RecipesController < ApplicationController
   private
 
   def set_recipe
-    @recipe = Recipe.find(params[:id])
+    # @recipe = Recipe.find(params[:id])
+    @recipe = current_user.recipes.includes(:recipe_foods).find(params[:id])
   end
 
   def recipe_params
