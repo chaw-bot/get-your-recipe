@@ -7,6 +7,7 @@ class RecipesController < ApplicationController
   def show
     @recipes = set_recipe
     @foods = current_user.foods
+    @recipe_foods = @recipes.recipe_foods
   end
 
   def new; end
