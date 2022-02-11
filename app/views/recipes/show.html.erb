@@ -39,11 +39,10 @@
       <% @recipe_foods.each do |recipe_food| %>
         <tr>
           <td><%= recipe_food.food.name%></td>
-          <td><%= recipe_food.quantity%> <%= recipe_food.food.measurement_unit%></td>
-          <td>$ <%= recipe_food.food.price * recipe_food.quantity %></td>
+          <td><%= recipe_food.quantity%></td>
+          <td> $ <%= recipe_food.food.price * recipe_food.quantity %></td>
           <th scope="col">
-            <%= link_to 'Modify', food_path(recipe_food.id), method: :update %>
-            <%= link_to 'Remove', food_path(recipe_food.id), method: :delete %>
+            <%= button_to 'Remove', recipe_recipe_food_path(@recipe.id, recipe_food.id), method: :delete %>
           </th>
         </tr>
       <% end %>

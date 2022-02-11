@@ -11,7 +11,6 @@
       <th scope="col">Food</th>
       <th scope="col">Quantity</th>
       <th scope="col">Value</th>
-      <th scope="col">Actions</th>
     </tr>
   </thead>
   <tbody>
@@ -20,10 +19,6 @@
         <td><%= food.name%></td>
         <td><%= food.measurement_unit%></td>
         <td>$ <%= food.price%></td>
-        <th scope="col">
-          <%= link_to 'Modify', food_path(food.id), method: :update %>
-          <%= link_to 'Remove', food_path(food.id), method: :delete %>
-        </th>
       </tr>
     <% end %>
   </tbody>
