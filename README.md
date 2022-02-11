@@ -27,6 +27,17 @@ The Recipe app keeps track of all your recipes and ingredients. It will allow yo
 - Run bundle install on a Terminal to get Gemfile dependencies.
 - Start the server by running `rails s`
   
+
+## Run test
+
+```bash
+$ bundle exec rspec ./spec/requests/recipes_index_spec.rb
+$ bundle exec rspec ./spec/requests/recipes_show_spec.rb
+$ bundle exec rspec ./spec/features/food_index_spec.rb
+$ bundle exec rspec ./spec/features/login_spec.rb
+```
+
+
 ## Authors
 
 👤 **Chawanzi Ng'uni**
