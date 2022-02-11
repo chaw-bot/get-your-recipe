@@ -39,7 +39,7 @@
         <tr>
           <td><%= recipe_food.food.name%></td>
           <td><%= recipe_food.quantity%></td>
-          <td> $ <%= recipe_food.food.price * recipe_food.quantity %></td>
+          <td> $ <%= recipe_food.food.price %></td>
           <th scope="col">
             <%= button_to 'Remove', recipe_recipe_food_path(@recipe.id, recipe_food.id), method: :delete %>
           </th>
