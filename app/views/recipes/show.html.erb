@@ -20,7 +20,9 @@
      <%= link_to 'Generate shopping list', general_shopping_lists_path(@recipe), data: { turbo: false }, html: { method: :put}, class: "add-foods" %>
     </button>
     <button>
-      <%= link_to 'Add ingredients', new_recipe_recipe_food_url(@recipe.id), data: { turbo: false }, html: { method: :put} %>
+      <% link_to 'Add ingredients', new_recipe_recipe_food_url(@recipe.id), data: { turbo: false }, html: { method: :put} %>
+      <%= link_to 'Add ingredients', new_recipe_food_url(@recipe.id), data: { turbo: false }, html: { method: :put} %>
+
     </button>
   </div>
 
@@ -37,10 +39,11 @@
       </tr>
     </thead>
     <tbody>
+    <h1><%= @foods.size%></h1>
       <% @foods.each do |food| %>
         <tr>
           <td><%= food.name%></td>
-          <td><%= food.measurement_unit%> g</td>
+          <td><%= food.measurement_unit%></td>
           <td>$ <%= food.price%></td>
           <th scope="col">
             <%= link_to 'Modify', food_path(food.id), method: :update %>

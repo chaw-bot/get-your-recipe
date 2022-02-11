@@ -6,7 +6,7 @@ class PublicRecipesController < ApplicationController
     # @user_recipe = User.recipe
     # foods_recipe = @user.foods
 
-    # @foods = current_user.foods
+    @foods = current_user.foods
     # @total_food_items = @foods.size
     # @total_price = @foods.sum('price')
 
