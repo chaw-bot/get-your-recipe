@@ -18,7 +18,7 @@
     <% @foods.each do |food| %>
       <tr>
         <td><%= food.name%></td>
-        <td><%= food.measurement_unit%> g</td>
+        <td><%= food.measurement_unit%></td>
         <td>$ <%= food.price%></td>
         <th scope="col">
           <%= link_to 'Modify', food_path(food.id), method: :update %>
