@@ -20,9 +20,7 @@
      <%= link_to 'Generate shopping list', general_shopping_lists_path(@recipe), data: { turbo: false }, html: { method: :put}, class: "add-foods" %>
     </button>
     <button>
-      <% link_to 'Add ingredients', new_recipe_recipe_food_url(@recipe.id), data: { turbo: false }, html: { method: :put} %>
-      <%= link_to 'Add ingredients', new_recipe_food_url(@recipe), data: { turbo: false }, html: { method: :put} %>
-
+      <%= link_to 'Add ingredients', new_recipe_recipe_food_url(@recipe), data: { turbo: false }, html: { method: :put} %>
     </button>
   </div>
   <div class="line-detail"></div>

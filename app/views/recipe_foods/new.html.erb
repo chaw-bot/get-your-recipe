@@ -2,18 +2,22 @@
   <div class="food-title">
     <h1>Add to my Shopping List...</h1>
   </div>
-  <%= form_with model: @foods, url:foods_path, scope: :food, method: :post, data: { turbo: false }, class: "food-form" do |form| %>
+  <%= form_with model: @foods, url: recipe_recipe_foods_url(@recipe), scope: :food, method: :post, data: { turbo: false }, class: "food-form" do |form| %>
     <div class="input textarea">
       <%= form.label :name %>
       <%= form.text_field :name, class: "form-control", required: true %>
     </div>
     <div class="input textarea mt-3">
       <%= form.label :quantity %>
+      <%= form.number_field :quantity, class: "form-control", required: true %>
+    </div>
+    <div class="input textarea mt-3">
+      <%= form.label :measurement_unit %>
       <%= form.text_field :measurement_unit, class: "form-control", required: true %>
     </div>
     <div class="input textarea mt-3">
       <%= form.label :price %>
-      <%= form.text_field :price, class: "form-control", required: true %>
+      <%= form.number_field :price, class: "form-control", required: true %>
     </div>
     <div class="submit mt-3">
       <%= form.submit "submit" %>

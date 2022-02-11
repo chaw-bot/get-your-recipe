@@ -2,24 +2,26 @@ class RecipeFoodsController < ApplicationController
   def show; end
 
   def create
-    @recipe = Recipe.find(params[:id])
+    @recipe = Recipe.find(params[:recipe_id])
     # @recipe = Recipe.where(id: :id)
-    @recipe_food = @recipe.recipe_foods.new(recipe_food_params)
-    @recipe_food.user = current_user
+    @food = Food.new(food_params)
+    @food.user = current_user
+    @food.save!
+    @recipe_food = @recipe.recipe_foods.new(food: @food, quantity: params[:food][:quantity])
     @recipe_food.save!
-    # @recipe = current_user.recipes.find(params[:id])
-    # @recipe_foods = @recipe.recipe_foods.new(recipe_foods_params)
-    # redirect_to recipe_path(@recipe.id), notice: 'Ingredient saved successfully'
+    # redirect_to general_shopping_lists_path
+    redirect_to recipe_path(@recipe), notice: 'Ingredient saved successfully'
   end
 
   def new
+    @recipe = Recipe.find(params[:recipe_id])
     # @user = User.find(params[:user_id])
     # @food = @user.foods.new
   end
 
   private
 
-  def recipe_food_params
-    params.require(:recipe_foods).permit(:quantity, :recipe_id)
+  def food_params
+    params.require(:food).permit(:name, :measurement_unit, :price)
   end
 end

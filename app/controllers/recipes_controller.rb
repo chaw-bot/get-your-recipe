@@ -6,11 +6,11 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = set_recipe
-    @foods = current_user.foods
+    # @foods = current_user.foods
+    @foods = @recipe.foods
     # # @recipe = Recipe.find(params[:id])
     # # @foods = @recipe.recipe_foods.includes(:food) 
     # @foods = current_user.recipes.includes(:foods)
-
   end
 
   def new; end
