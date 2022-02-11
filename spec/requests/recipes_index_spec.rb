@@ -18,7 +18,7 @@ RSpec.describe 'Recipe Index Page', type: :feature do
   end
 
   describe 'I can see' do
-    it 'the My list of Recipes title' do
+    it 'An Title:' do
       expect(page).to have_content 'My list of Recipes'
     end
 
