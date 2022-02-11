@@ -16,17 +16,14 @@
     </div>
   </div>
   <div class="detail-btns d-flex">
-     <button class="">
-       <%= link_to 'Generate shopping list', general_shopping_lists_path(@recipe), data: { turbo: false }, html: { method: :put}, class: "add-foods" %>
-     </button>
-    <button class="">Add ingredient</button>
-    # <button class="btn btn-primary mt-3">
-    #   <% link_to 'Add ingredient', new_food_path, data: { turbo: false }, html: { method: :put}, class: "add-food" %>
-    # </button> 
+    <button>
+     <%= link_to 'Generate shopping list', general_shopping_lists_path(@recipe), data: { turbo: false }, html: { method: :put}, class: "add-foods" %>
+    </button>
+    <button>
+      <%= link_to 'Add ingredients', new_recipe_recipe_food_url(@recipe), data: { turbo: false }, html: { method: :put} %>
+    </button>
   </div>
-
   <div class="line-detail"></div>
-
 
   <table class="table table-striped table-bordered">
     <thead>
@@ -38,14 +35,13 @@
       </tr>
     </thead>
     <tbody>
-      <% @foods.each do |food| %>
+      <% @recipe_foods.each do |recipe_food| %>
         <tr>
-          <td><%= food.name%></td>
-          <td><%= food.measurement_unit%> g</td>
-          <td>$ <%= food.price%></td>
+          <td><%= recipe_food.food.name%></td>
+          <td><%= recipe_food.quantity%></td>
+          <td> $ <%= recipe_food.food.price %></td>
           <th scope="col">
-            <%= link_to 'Modify', food_path(food.id), method: :update %>
-            <%= link_to 'Remove', food_path(food.id), method: :delete %>
+            <%= button_to 'Remove', recipe_recipe_food_path(@recipe.id, recipe_food.id), method: :delete %>
           </th>
         </tr>
       <% end %>

@@ -7,6 +7,7 @@ class RecipesController < ApplicationController
   def show
     @recipes = set_recipe
     @foods = current_user.foods
+    @recipe_foods = @recipes.recipe_foods
   end
 
   def new; end
@@ -22,7 +23,7 @@ class RecipesController < ApplicationController
 
   def destroy
     @recipe = set_recipe
-    @recipe.delete
+    @recipe.destroy
     respond_to do |format|
       format.html { redirect_to recipes_url, notice: 'Recipes was deleted successfully.' }
     end
@@ -31,7 +32,8 @@ class RecipesController < ApplicationController
   private
 
   def set_recipe
-    @recipe = Recipe.find(params[:id])
+    # @recipe = Recipe.find(params[:id])
+    @recipe = current_user.recipes.includes(:recipe_foods).find(params[:id])
   end
 
   def recipe_params

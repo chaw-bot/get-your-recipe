@@ -9,14 +9,14 @@
     </div>
     <div class="input textarea mt-3">
       <%= form.label :measurement_unit %>
-      <%= form.text_field :measurement_unit, placeholder:'Measurements in grams', class: "form-control" %>
+      <%= form.text_field :measurement_unit, placeholder:'Measurements in grams or units', class: "form-control" %>
     </div>
     <div class="input textarea mt-3">
       <%= form.label :price %>
       <%= form.text_field :price, placeholder:'Price in dollars', class: "form-control" %>
     </div>
     <div class="submit mt-3">
-      <%= form.submit "submit" %>
+      <%= form.submit "submit", class: "button" %>
     </div>
   <% end %>
 </div>

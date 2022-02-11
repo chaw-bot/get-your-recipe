@@ -3,8 +3,8 @@
     <h1>My Food List</h1>
   </div>
   <div class="button">
-    <button class="btn btn-primary mt-3">
-      <%= link_to 'Add Food', new_food_path, data: { turbo: false }, html: { method: :put}, class: "add-food" %>
+    <button>
+      <%= link_to 'Add Food', new_food_path, data: { turbo: false }, html: { method: :put} %>
     </button>
   </div>
   <table class="table table-striped table-bordered border">
@@ -20,7 +20,7 @@
       <% @foods.each do |food| %>
         <tr>
           <td><%= food.name%></td>
-          <td><%= food.measurement_unit%> g</td>
+          <td><%= food.measurement_unit%></td>
           <td>$ <%= food.price%></td>
           <td><%=button_to 'Delete', {:controller => :foods, :action => 'destroy', :id => food.id}, :method => :delete%></td>
         </tr>
