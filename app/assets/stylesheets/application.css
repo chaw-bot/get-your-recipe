@@ -6,9 +6,8 @@
 }
 
 body {
-  padding: 0 3%;
   height: 90vh;
-  background-color: var(--bacground-color);
+  background-color: #acebff;
 }
 
 * {
@@ -28,11 +27,36 @@ a:link {
   color: black;
 }
 
-button {
+.word {
+  color: #272727;
+  font-weight: bold;
+  font-size: 20px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+button,
+.signupbtn {
   font-weight: 700;
   border: var(--size-border);
   border-radius: 4px;
   padding: 0.3rem 1rem;
+}
+
+.notice,
+.alert {
+  border-radius: 5px;
+  color: black;
+  text-align: center;
+}
+
+.notice {
+  border: 2px solid rgb(0 128 0 / 0%);
+  background: #d8ffe3;
+}
+
+.alert {
+  border: 2px solid #f000;
+  background: #f2b5af;
 }
 
 .button {
@@ -47,23 +71,20 @@ button {
 
 section.container {
   max-width: 992px;
-  margin: 0 auto 2rem;
   padding: 1rem;
-  background-color: var(--bacground-color);
+}
+
+.signup,
+.links {
+  text-align: center;
 }
 
 .navbar {
   max-width: 992px;
   margin: 0 auto;
   padding: 1rem;
+  background-color: #98bdff;
 }
-
-/* .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
-} */
 
 .card {
   width: 100%;
@@ -85,6 +106,10 @@ h1 {
   width: 100%;
   text-align: center;
   margin: 0.3rem 0 0.6rem;
+}
+
+.recipe-public-card {
+  background-color: white;
 }
 
 .public-recipes-section .recipe-public-card,
@@ -125,13 +150,17 @@ h1 {
   padding: 0.4rem 1rem;
 }
 
-/* form {
+table {
+  background-color: #d8ffe3;
+}
+
+.form {
   max-width: 640px;
   margin: 1.5rem auto;
   padding: 1rem;
-  background-color: #ccc;
+  background-color: #bccbff;
   border-radius: 4px;
-} */
+}
 
 /* RECIPE_DETAILS */
 
@@ -167,7 +196,3 @@ div.line-detail {
   height: 2px;
   background-color: var(--text-color);
 }
-
-/* table {
-  background-color: #fff;
-} */

@@ -16,9 +16,14 @@
 
   <body>
     <%= render partial: "partials/navbar" %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <section class="container bg-light">
+    <% if notice.present? %>
+      <p class="notice"><%= notice %></p>
+    <% end %>
+
+    <% if alert.present? %>
+      <p class="alert"><%= alert %></p>
+    <% end %>
+    <section class="container">
       <%= yield %>
     </section>
   </body>

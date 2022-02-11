@@ -1,12 +1,12 @@
-<nav class="navbar navbar-light bg-light">
-  <%= link_to "Get Your Recipe", root_path%>
+<nav class="navbar">
+  <%= link_to "Get Your Recipe", root_path, class: "word"%>
   <% if user_signed_in? %>
-    <%= link_to "My Food", foods_path, class: "justify-content-center align-self-center" %>
-    <%= link_to "My Recipes", recipes_path, class: "justify-content-center align-self-center" %>
-    <%= link_to "Our Recipes", public_recipes_path, class: "justify-content-center align-self-center" %>
-    <%= button_to "Sign Out", destroy_user_session_path, method: :delete, data: {turbo: false}, class: "justify-content-center align-self-center btn btn-primary" %>
+    <%= link_to "My Food", foods_path, class: "justify-content-center align-self-center word" %>
+    <%= link_to "My Recipes", recipes_path, class: "justify-content-center align-self-center word" %>
+    <%= link_to "Our Recipes", public_recipes_path, class: "justify-content-center align-self-center word" %>
+    <%= button_to "Sign Out", destroy_user_session_path, method: :delete, data: {turbo: false}, class: "justify-content-center align-self-center btn signupbtn word" %>
   <% else %>
-    <%= link_to "Sign In", new_user_session_path, data: {turbo: false}, class: "justify-content-center align-self-center" %>
-    <%= link_to "Sign Up", new_user_registration_path, class: "justify-content-center align-self-center" %>
+    <%= link_to "Sign In", new_user_session_path, data: {turbo: false}, class: "justify-content-center align-self-center word" %>
+    <%= link_to "Sign Up", new_user_registration_path, class: "justify-content-center align-self-center word" %>
   <% end %>
 </nav>
