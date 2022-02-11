@@ -17,7 +17,7 @@
     <% @foods.each do |food| %>
       <tr>
         <td><%= food.name%></td>
-        <td><%= food.measurement_unit%></td>
+        <td><%= RecipeFood.joins(:food).where(food_id: food.id).sum( 'quantity') %></td>
         <td>$ <%= food.price%></td>
       </tr>
     <% end %>
