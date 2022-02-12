@@ -1,9 +1,9 @@
-<div class="card">
+
   <div class="food-title">
     <h1>Add to my Shopping List...</h1>
   </div>
 
-  <%= form_with url: recipe_recipe_foods_path(params[:recipe_id]), data: { turbo: false }, scope: :recipe_foods, class: "food-form" do |form| %>
+  <%= form_with url: recipe_recipe_foods_path(params[:recipe_id]), data: { turbo: false }, scope: :recipe_foods, class: "form" do |form| %>
     <section class="text-box d-flex">
       <%= form.label "List of Ingredients", class: "unit-label" %>
       <%= form.select :food_id, @foods.collect { |food| [food.name, food.id] }, class: "full-width", placeholder: "Select ingredient", required: true %>
@@ -13,7 +13,7 @@
       <%= form.text_field :quantity, class: "form-control", required: true %>
     </div>
     <div class="submit mt-3">
-      <%= form.submit "submit" %>
+      <%= form.submit "submit", class: "signupbtn" %>
     </div>
   <% end %>
-</div>
+

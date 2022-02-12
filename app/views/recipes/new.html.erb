@@ -1,8 +1,8 @@
-<div class="card">
+
   <div class="food-title">
     <h1>My New Recipe</h1>
   </div>
-  <%= form_with model: @recipes, url:recipes_path, scope: :recipe, method: :post, data: { turbo: false }, class: "food-form" do |form| %>
+  <%= form_with model: @recipes, url:recipes_path, scope: :recipe, method: :post, data: { turbo: false }, class: "form" do |form| %>
     <div class="input textarea">
       <%= form.label :name %>
       <%= form.text_field :name, placeholder: 'Name of the dish',  class: "form-control" %>
@@ -24,7 +24,7 @@
       <%= form.label "Public", class: "form-check-label", for: "flexSwitchCheckDefault" %>
     </div>
     <div class="submit mt-3">
-      <%= form.submit "submit" %>
+      <%= form.submit "submit", class: "signupbtn" %>
     </div>
   <% end %>
-</div>
+
