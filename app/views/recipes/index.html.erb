@@ -8,7 +8,7 @@
 </div>
 <% @recipes.each do |recipe| %>
   <div class="card mt-3">
-    <div class="card-body recipe-body">
+    <div class="card-body">
       <div>
         <h1><%= link_to recipe.name, recipe_path(recipe) %></h1>
         <%= button_to 'Delete', recipe_path(recipe.id), method: :delete %>
